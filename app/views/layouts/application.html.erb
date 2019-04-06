@@ -5,13 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> <!--https or http can be left off to be more flexible-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= yield %> <!--html in other files is added here with yield-->
   </body>
 </html>
 <!--Html here will be added to all html files-->
