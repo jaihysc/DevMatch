@@ -14,6 +14,8 @@
  *= require_self
  */
 /*CSS here will be added to all html files*/
+@import 'bootstrap-sprockets'; /* SCSS for bootstrap*/
+@import 'bootstrap';
 
 h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
