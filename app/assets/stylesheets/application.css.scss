@@ -32,6 +32,16 @@ h1, h2, h3 {
   color: darkslategray;
 }
 
+.navbar-default .navbar-brand { //CSS is based on specificity, the more specified takes over
+  color: #464748;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: gray;
+}
+.navbar-default .navbar-nav > li > a:hover{
+  color: #575757;
+}
 //Gradients for various elements - https://uigradients.com
 body {
   background: #6190E8;  /* fallback for old browsers */
