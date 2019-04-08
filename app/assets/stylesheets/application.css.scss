@@ -21,27 +21,29 @@ h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
 }
 
+//Home page
 .home-callout {
   margin-top: -20px;
   padding-top: 20px;
   padding-bottom: 20px;
+  & p {
+    margin-top: 50px;
+    color: darkslategray;
+  }
 }
 
-.home-callout p {
-  margin-top: 50px;
-  color: darkslategray;
-}
-
+//Navbar
 .navbar-default .navbar-brand { //CSS is based on specificity, the more specified takes over
   color: #464748;
 }
 
 .navbar-default .navbar-nav > li > a{
   color: gray;
+  & :hover { //SCSS nesting
+    color: #575757;
+  }
 }
-.navbar-default .navbar-nav > li > a:hover{
-  color: #575757;
-}
+
 //Gradients for various elements - https://uigradients.com
 body {
   background: #6190E8;  /* fallback for old browsers */
