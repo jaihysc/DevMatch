@@ -40,6 +40,9 @@ gem 'jbuilder', '~> 2.5'
 #Bootstrap - front end UI
 gem 'bootstrap-sass'
 
+#Icons with font awesome
+gem 'font-awesome-sass', '~> 5.8.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
