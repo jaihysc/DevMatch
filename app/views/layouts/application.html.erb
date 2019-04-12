@@ -21,7 +21,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <%= link_to "/", class: "navbar-brand" do %> <!--Best practice to rails links-->
+            <%= link_to root_path, class: "navbar-brand" do %> <!--Best practice to rails links-->
               <i class="fas fa-users"></i>
               DevMatch
             <% end %>
@@ -30,7 +30,7 @@
           <div class="collapse navbar-collapse" id="main-nav-collapse">
             <ul class="nav navbar-nav navbar-right">
               <!--<li><a href="/about">About</a></li>--> <!--Links should be done with a relative path so changing its name will not break the link-->
-              <li><%= link_to "About", "/about" %></li>
+              <li><%= link_to "About", about_path %></li> <!--Path is relative, url is absolute url to page-->
             </ul>
           </div><!-- /.navbar-collapse -->
         </div>
