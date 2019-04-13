@@ -40,13 +40,23 @@ h1, h2, h3 {
   color: #464748;
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: black;
+}
+
+.navbar-default .navbar-toggle {
+  border: 2px solid gray;
+  &:hover, &:focus {
+    background-color: #f2f0ee;
+  }
+}
+
 .navbar-default .navbar-nav > li > a{
   color: gray;
   & :hover { //SCSS nesting
     color: #575757;
   }
 }
-
 //Gradients for various elements - https://uigradients.com
 body {
   background: #6190E8;  /* fallback for old browsers */
