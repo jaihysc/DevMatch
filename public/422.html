@@ -4,6 +4,13 @@
   <title>The change you wanted was rejected (422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+    header {
+      border: 0.1em solid crimson;
+      border-radius: 10px;
+      margin: 1em;
+      font-size: 5em;
+    }
+
   .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
@@ -56,12 +63,12 @@
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/422.html -->
+  <header>422</header>
   <div class="dialog">
     <div>
       <h1>The change you wanted was rejected.</h1>
       <p>Maybe you tried to change something you didn't have access to.</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
