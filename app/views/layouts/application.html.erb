@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>DevMatch</title>
     <%= csrf_meta_tags %>
@@ -31,6 +31,7 @@
             <ul class="nav navbar-nav navbar-right">
               <!--<li><a href="/about">About</a></li>--> <!--Links should be done with a relative path so changing its name will not break the link-->
               <li><%= link_to "About", about_path %></li> <!--Path is relative, url is absolute url to page-->
+              <li><%= link_to "Contact Us", new_contact_path %></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div>
