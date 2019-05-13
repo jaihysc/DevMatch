@@ -28,6 +28,10 @@
           </div>
 
           <div class="collapse navbar-collapse" id="main-nav-collapse">
+            <div class="nav navbar-nav navbar-right">
+              <%= link_to "Log In", new_user_session_path, class: 'btn navbar-btn login-button-border' %>
+              <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary navbar-btn' %>
+            </div>
             <ul class="nav navbar-nav navbar-right">
               <!--<li><a href="/about">About</a></li>--> <!--Links should be done with a relative path so changing its name will not break the link-->
               <li><%= link_to "About", about_path %></li> <!--Path is relative, url is absolute url to page-->
