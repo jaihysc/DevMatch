@@ -102,3 +102,7 @@ body {
   border: gray 1px solid;
   color: gray;
 }
+
+.alert-notice { //Hides devise log in / out messages
+  display: none;
+}
