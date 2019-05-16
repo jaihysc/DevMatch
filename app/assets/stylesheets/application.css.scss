@@ -28,7 +28,7 @@ h1, h2, h3 {
 .home-callout {
   margin-top: -20px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   & p {
     margin-top: 50px;
     color: darkslategray;
@@ -105,4 +105,14 @@ body {
 
 .alert-notice { //Hides devise log in / out messages
   display: none;
+}
+
+#get-started {
+  margin-top: 10px;
+  padding-bottom: 40px;
+}
+
+.no-border {
+  border-left: 0;
+  border-right: 0;
 }

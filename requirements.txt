@@ -1,0 +1,4 @@
+Memberships
+* User sees options for basic / pro plan on sign up page
+* basic / pro selections will point to different selection forms? | Inefficient, should be one single sign up form?
+* Pro plan will point to extra form with billing information (Credit, debit, etc)
