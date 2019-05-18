@@ -6,7 +6,7 @@
         <div class="col-md-10 col-md-offset-1">
           <h4>DevMatch is the collaborative platform inspired by the way employers and employees work. From small to large business,
             you can find work, offer work and be employed alongside 59 million workers</h4>
-<!--          <p>Find how you can benefit</p>-->
+          <p><i class="fas fa-chevron-down"></i></p>
         </div>
       </div>
     </div>
@@ -20,14 +20,14 @@
       <br>
       <div>
         <div class="col-md-6">
-          <%= link_to "Sign up with Basic", new_user_session_path, class: 'btn btn-primary btn-lg btn-block' %>
+          <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
           <ul class="list-group list-group-flush">
             <li class="list-group-item no-border"><i class="fas fa-money-bill"></i> Free</li>
             <li class="list-group-item no-border"><i class="fas fa-check"></i> Domestic jobs</li>
           </ul>
         </div>
         <div class="col-md-6">
-          <%= link_to "Sign up with Pro", new_user_session_path, class: 'btn btn-success btn-lg btn-block' %>
+          <%= link_to "Sign up with Pro", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
           <ul class="list-group list-group-flush">
             <li class="list-group-item no-border"><i class="fas fa-money-bill"></i> $10/Month</li>
             <li class="list-group-item no-border"><i class="fas fa-check-double"></i> Global jobs</li>
