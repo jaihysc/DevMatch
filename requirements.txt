@@ -2,3 +2,12 @@ Memberships
 * User sees options for basic / pro plan on sign up page
 * basic / pro selections will point to different selection forms? | Inefficient, should be one single sign up form?
 * Pro plan will point to extra form with billing information (Credit, debit, etc)
+
+Stripe integration
+* Get card token from stripe via data from entered forms
+* Users need strike token in database user table
+* Javascript to intercept pro form on submit and send information to strike for card token
+* Javascript send user fields + card token to rails app for validation, Rails notes Plan 1 / plan 2
+* If valid, send user info (email, plan id) to stripe servers to create subscription + to get customer token
+* Save customer information to database
+
