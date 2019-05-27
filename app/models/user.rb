@@ -8,7 +8,7 @@ class User < ApplicationRecord
   #Get parameters from forms by whitelisting with attr_accessor
   attr_accessor :stripe_card_token
   def save_with_subscription
-    #Validate fields
+    #if user passes Validate fields
     if valid?
       #Set up subscription account with stripe
       customer = Stripe::Customer.create(description: email, plan: plan_id, card: stripe_card_token)
