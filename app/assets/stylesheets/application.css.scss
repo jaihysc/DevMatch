@@ -103,8 +103,22 @@ body {
   color: gray;
 }
 
-.alert-notice { //Hides devise log in / out messages
-  display: none;
+//Alert messages at top of page
+#flash-container {
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+.alert-notice, .alert-alert { //Hides devise log in / out messages
+  background: rgba(155, 155, 155, 0.88);
+
+  color: white;
+  border: 1px white solid;
+  text-align: center;
+  margin-top: -14px;
+  font-size: 18px;
 }
 
 #get-started {
