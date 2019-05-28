@@ -13,15 +13,15 @@
 //Document ready
 document.addEventListener("DOMContentLoaded", function(event) {
     $( document ).on('turbolinks:load', function() {
-        let targetForm = $('#pro_form');
-        let submitBtn = $('#form-signup-btn');
+        var targetForm = $('#pro_form');
+        var submitBtn = $('#form-signup-btn');
 
         //Set stripe public key
-        let stripe = Stripe($('meta[name="stripe-key"]').attr('content'));
-        let elements = stripe.elements();
+        var stripe = Stripe($('meta[name="stripe-key"]').attr('content'));
+        var elements = stripe.elements();
 
         //Create card form
-        let style = {
+        var style = {
             base: {
                 color: '#32325d',
                 fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         };
         // Create an instance of the card Element.
-        let card = elements.create('card', {style: style});
+        var card = elements.create('card', {style: style});
 
         // Add an instance of the card Element into the `card-element` <div>.
         card.mount('#card-element');
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             stripe.createToken(card).then(function(result) {
                 if (result.error) {
                     // Inform the customer that there was an error.
-                    let errorElement = document.getElementById('card-errors');
+                    var errorElement = document.getElementById('card-errors');
                     errorElement.textContent = result.error.message;
                     submitBtn.val("Sign up").prop('disabled', false);
                 } else {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             });
 
             // // Collect credit card form fields
-            // let ccNum = $('#card_number').val(),
+            // var ccNum = $('#card_number').val(),
             //     cvcCode = $('#card_code').val(),
             //     expMonth = $('#card_month').val(),
             //     expYear = $('#card_year').val();
