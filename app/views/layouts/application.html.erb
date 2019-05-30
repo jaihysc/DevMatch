@@ -13,47 +13,59 @@
   </head>
 
   <body>
-
-      <nav class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class='container'>
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <%= link_to root_path, class: "navbar-brand" do %> <!--Best practice to rails links-->
-              <i class="fas fa-users"></i>
-              DevMatch
-            <% end %>
-          </div>
-
-          <div class="collapse navbar-collapse" id="main-nav-collapse">
-            <div class="nav navbar-nav navbar-right">
-              <!--Show login / sign up if user is not logged in-->
-              <% if user_signed_in? %>
-                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
-            <% else %>
-                <%= link_to "Log In", new_user_session_path, class: 'btn navbar-btn login-button-border' %>
-                <%#= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary navbar-btn' %>
-              <% end %>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-              <!--<li><a href="/about">About</a></li>--> <!--Links should be done with a relative path so changing its name will not break the link-->
-              <li><%= link_to "About", about_path %></li> <!--Path is relative, url is absolute url to page-->
-              <li><%= link_to "Contact Us", new_contact_path %></li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <div class="navbar-brand">
+          <%= link_to root_path, class: "navbar-brand" do %> <!--Best practice to rails links-->
+            <i class="fas fa-users"></i>
+            DevMatch
+          <% end %>
         </div>
-      </nav>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="container" id="flash-container">
-        <% flash.each do |type, msg| %>
-          <%= content_tag :div, msg, class: "alert alert-#{type}" %>
-        <% end %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <!--<li><a href="/about">About</a></li>--> <!--Links should be done with a relative path so changing its name will not break the link-->
+            <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li> <!--Path is relative, url is absolute url to page-->
+            <li class="nav-item"><%= link_to "Contact", new_contact_path, class: "nav-link" %></li>
+          </ul>
+
+          <ul class="navbar-nav">
+          </ul>
+
+          <!--Show login / sign up if user is not logged in-->
+          <% if user_signed_in? %>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle navbar-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Profile
+              </button>
+              <div class="dropdown-menu dropdown-menu-sw mt-2" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Another action</a>
+
+                <%= link_to "Create Profile", new_user_profile_path(user_id: 1), class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary navbar-btn btn-sm dropdown-item' %>
+              </div>
+            </div>
+          <% else %>
+            <%= link_to "Log In", new_user_session_path, class: 'btn navbar-btn login-button-border' %>
+            <%#= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary navbar-btn' %>
+          <% end %>
+        </div>
+
       </div>
-      <%= yield %> <!--html in other files is added here with yield-->
+    </nav>
+
+    <div class="container-fluid" id="flash-container">
+      <% flash.each do |type, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+      <% end %>
+    </div>
+    <%= yield %> <!--html in other files is added here with yield-->
 
   </body>
 </html>

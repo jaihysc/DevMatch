@@ -1,9 +1,9 @@
 <div class="home-callout main-bar-gradient container-fluid">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="col-md-8 offset-md-2 text-center">
         <h1>Where developers and corporations meet</h1>
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-10 offset-md-1">
           <h4>DevMatch is the collaborative platform inspired by the way employers and employees work. From small to large business,
             you can find work, offer work and be employed alongside 59 million workers</h4>
           <p><i class="fas fa-chevron-down"></i></p>
@@ -15,10 +15,10 @@
 <!--Single link for get started basic plan-->
 <div class="container" id="get-started">
   <div class="text-center row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8 offset-md-2">
       <h2>Get started</h2>
       <br>
-      <div>
+      <div class="row">
         <div class="col-md-6">
           <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
           <ul class="list-group list-group-flush">
@@ -26,6 +26,7 @@
             <li class="list-group-item no-border"><i class="fas fa-check"></i> Domestic jobs</li>
           </ul>
         </div>
+
         <div class="col-md-6">
           <%= link_to "Sign up with Pro", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
           <ul class="list-group list-group-flush">

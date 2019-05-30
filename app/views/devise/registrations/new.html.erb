@@ -1,7 +1,8 @@
 <div class="container">
+  <br>
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="well">
+    <div class="col-md-6 offset-md-3 card">
+      <div class="card-body">
         <% if params[:plan] == '1'%>
           <h3 class="btn-primary btn-lg btn-block text-center ">Basic plan</h3>
           <ul class="list-inline text-center">
@@ -32,11 +33,13 @@
         <%= render "devise/shared/links" %>
       </div>
     </div>
-    <!--Selectors for the other plans-->
-    <div class="col-md-2">
-      <div class="card-boarder">
-        <h2 class="btn-outline-info text-center ">Plans</h2>
 
+    <!--Selectors for the other plans-->
+    <div class="col-md-3 card">
+      <br>
+      <h2 class="card-title text-center">Plans</h2>
+
+      <div class="card-body">
           <% if @id == 1%>
             <%= link_to "Pro", new_user_registration_path(plan: '2'), class: 'btn btn-success btn-lg btn-block' %>
             <ul class="list-group list-group-flush">
@@ -51,7 +54,6 @@
               <li class="list-group-item no-border"><i class="fas fa-check"></i> Domestic jobs</li>
             </ul>
         <% end %>
-
       </div>
     </div>
   </div>
