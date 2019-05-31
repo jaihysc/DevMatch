@@ -1,0 +1,56 @@
+<%= form_for @profile, url: user_profile_path do |f| %>
+<!--  t.string "first_name"-->
+<!--  t.string "last_name"-->
+<!--  t.string "display_name"-->
+
+<!--  t.string "job_title"-->
+<!--  t.string "phone_num"-->
+<!--  t.string "contact_email"-->
+<!--  t.string "description"-->
+  <div class="form-group">
+    <%= f.label :display_name %>
+    <%= f.text_field :display_name, class: "form-control" %>
+    <small id="emailHelp" class="form-text text-muted">This will be shown if you choose to hide your real name</small>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control" %>
+      </div>
+      <div class="col-md-6">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :job_category %>
+    <%= f.select :job_title, %w(Developer Entrepreneur Investor), {}, class: "form-control" %>
+  </div>
+
+  <br>
+  <hr>
+  <div class="form-group">
+    <%= f.label :contact_email %>
+    <%= f.text_field :contact_email, class: "form-control" %>
+    <small id="emailHelp" class="form-text text-muted">This will be used to contact you regarding job offers from others</small>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_num, class: "form-control" %>
+    <small id="emailHelp" class="form-text text-muted">This will be available for others to view to contact you</small>
+  </div>
+  <div class="form-group">
+
+  </div>
+  <div class="form-group">
+    <%= f.label :self_description %>
+    <%= f.text_area :description, class: "form-control", placeholder: "Tell everyone a little about yourself" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Update Profile", class: "btn btn-primary" %>
+  </div>
+
+<%end %>
