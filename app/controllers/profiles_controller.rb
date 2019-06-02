@@ -8,7 +8,8 @@ class ProfilesController < ApplicationController
   #POST to users/:user_id/profile
   def create
     @user = User.find(params[:user_id]) #Get user id
-    @profile = @user.build_profile(profile_params) #Create profile linked to user
+    #Create profile linked to user, use build for relations between 2 objects
+    @profile = @user.build_profile(profile_params) #Auto fills foreign key with build_profile
 
     if @profile.save
       flash[:success] = "Profile successfully updated"
