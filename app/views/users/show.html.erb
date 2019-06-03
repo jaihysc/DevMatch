@@ -4,7 +4,7 @@
     <div class="jumbotron">
       <div class="row bg-white rounded-lg" id="profile-head">
         <div class="col-md-4">
-          <%= image_tag @user.profile.avatar, class: "rounded img-fluid", alt: "Profile image"%>
+          <%= image_tag @user.profile.avatar, class: "rounded img-fluid", id: "avatar", alt: "Profile image"%>
         </div>
         <div class="col-md-8">
           <h1 class="display-4"><%=@user.profile.first_name %> <%=@user.profile.last_name %></h1>
@@ -31,8 +31,8 @@
               <div class="container bg-white">
                 <h2>Contact information</h2>
                 <hr>
-                <p><span class="font-weight-bold">Phone:</span> <%=@user.profile.phone_num %></p>
-                <p><span class="font-weight-bold">E-mail:</span> <%=@user.profile.contact_email %></p>
+                <p><i class="fas fa-phone"></i> <span class="font-weight-bold">Phone:</span> <%=@user.profile.phone_num %></p>
+                <p><i class="fas fa-envelope"></i> <span class="font-weight-bold">E-mail:</span> <%=@user.profile.contact_email %></p>
               </div>
             </div>
           <% else %>
