@@ -4,7 +4,7 @@
     <div class="jumbotron">
       <div class="row bg-white rounded-lg" id="profile-head">
         <div class="col-md-4">
-          <img class="rounded img-fluid" src="https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale" alt="Profile image">
+          <img class="rounded img-fluid" src="<%= url_for(@user.profile.avatar) %>" alt="Profile image">
         </div>
         <div class="col-md-8">
           <h1 class="display-4"><%=@user.profile.first_name %> <%=@user.profile.last_name %></h1>

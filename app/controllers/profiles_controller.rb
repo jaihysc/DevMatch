@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
 
     if @profile.save
       flash[:success] = "Profile successfully updated"
-      redirect_to users_path(params[user_id])
+      redirect_to user_path(id: params[:user_id])
     else
       flash[:alert] = "An error occurred"
       render action :new
@@ -22,6 +22,6 @@ class ProfilesController < ApplicationController
 
   private
     def profile_params
-      params.require(:profile).permit( :first_name, :last_name, :display_name, :job_title, :phone_num, :contact_email, :description)
+      params.require(:profile).permit( :first_name, :last_name, :display_name, :job_title, :phone_num, :contact_email, :description, :avatar)
     end
 end
