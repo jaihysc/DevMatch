@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-8">
           <h1 class="display-4"><%=@user.profile.first_name %> <%=@user.profile.last_name %></h1>
-          <p class="lead"><%=@user.profile.job_title %></p>
+          <p class="lead"><%= job_title_icon %> <%=@user.profile.job_title %></p>
 
           <hr class="my-4">
           <p><%=@user.profile.display_name%></p>
