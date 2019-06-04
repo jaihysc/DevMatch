@@ -7,6 +7,6 @@ class UsersController < ApplicationController
   end
 
   def index
-
+    @users = User.includes(:profile) #Use this instead of .all to save on performance
   end
 end
