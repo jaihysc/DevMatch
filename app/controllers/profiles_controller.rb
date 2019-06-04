@@ -16,13 +16,26 @@ class ProfilesController < ApplicationController
       redirect_to user_path(id: params[:user_id])
     else
       flash[:alert] = "An error occurred"
-      render action :new
+      render action: :new
     end
   end
 
   #users/user_id/profile/edit
   def edit
     @profile = User.find(params[:user_id]).profile
+  end
+
+  #PUT to /users/:user_id/profile
+  def update
+    @profile = User.find(params[:user_id]).profile
+
+    if @profile.update_attributes(profile_params)
+      flash[:success] = "Profile successfully updated"
+      redirect_to user_path(id: params[:user_id])
+    else
+      flash[:alert] = "An error occurred"
+      render action: :edit
+    end
   end
 
   private
