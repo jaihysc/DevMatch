@@ -1,4 +1,7 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user! #Handled by devise
+  before_action :authenticate_current_user
+
   #GET to /users/:user_id/profile/new
   def new
     #Render blank profile details form
@@ -41,5 +44,13 @@ class ProfilesController < ApplicationController
   private
     def profile_params
       params.require(:profile).permit( :first_name, :last_name, :display_name, :job_title, :phone_num, :contact_email, :description, :avatar)
+    end
+
+    #Ensure the user which the client is trying to access is themselves
+    def authenticate_current_user
+      @user = User.find( params[:user_id])
+      unless @user == current_user
+        redirect_to root_path
+      end
     end
 end
