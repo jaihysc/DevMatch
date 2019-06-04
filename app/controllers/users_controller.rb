@@ -5,4 +5,8 @@ class UsersController < ApplicationController
   def show #Show SHOW action for a SINGLE resource
     @user = User.find(params[:id])
   end
+
+  def index
+
+  end
 end
