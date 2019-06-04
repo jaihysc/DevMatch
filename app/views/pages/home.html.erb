@@ -12,33 +12,37 @@
     </div>
   </div>
 </div>
-<!--Single link for get started basic plan-->
-<div class="container" id="get-started">
-  <div class="text-center row">
-    <div class="col-md-8 offset-md-2">
-      <h2>Get started</h2>
-      <br>
-      <div class="row">
-        <div class="col-md-6">
-          <%= link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item no-border"><i class="fas fa-money-bill"></i> Free</li>
-            <li class="list-group-item no-border"><i class="fas fa-check"></i> Domestic jobs</li>
-          </ul>
-        </div>
 
-        <div class="col-md-6">
-          <%= link_to "Sign up with Pro", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item no-border"><i class="fas fa-money-bill"></i> $10/Month</li>
-            <li class="list-group-item no-border"><i class="fas fa-check-double"></i> Global jobs</li>
-            <li class="list-group-item no-border"><i class="fas fa-check-double"></i> Post job offers</li>
-          </ul>
+<!--Single link for get started basic plan-->
+<% unless user_signed_in? %>
+<div class="container" id="get-started">
+      <div class="text-center row">
+        <div class="col-md-8 offset-md-2">
+          <h2>Get started</h2>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <%=  link_to "Sign up with Basic", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block'  %>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item no-border"><i class="fas fa-money-bill"></i> Free</li>
+                <li class="list-group-item no-border"><i class="fas fa-check"></i> Domestic jobs</li>
+              </ul>
+            </div>
+
+            <div class="col-md-6">
+              <%=  link_to "Sign up with Pro", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block'  %>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item no-border"><i class="fas fa-money-bill"></i> $10/Month</li>
+                <li class="list-group-item no-border"><i class="fas fa-check-double"></i> Global jobs</li>
+                <li class="list-group-item no-border"><i class="fas fa-check-double"></i> Post job offers</li>
+              </ul>
+            </div>
+          </div>
+          <br>
         </div>
       </div>
-      <br>
-    </div>
-  </div>
 </div>
+<% end %>
+
 <div class="blue-background fill-screen">
 </div>
