@@ -1,6 +1,7 @@
 <div id="index-community-background">
   <div class="container">
-<!--    <h1 class="text-center display-3" id="index-community-header">DevMatch Community</h1>-->
+    <h1 class="text-center display-3" >DevMatch Community</h1>
+    <hr>
 
     <div class="row">
       <div class="col-md-10 offset-md-1">
@@ -12,8 +13,11 @@
                   <div class="row rounded-lg">
                     <div class="col-md-2">
                       <% if user.profile.avatar%>
-                        <%= link_to user do %>
+                        <%= link_to user, class: "text-decoration-none" do %>
                           <%= image_tag user.profile.avatar, class: "rounded img-fluid", alt: "Profile image"%>
+                          <%if user.plan_id == 2 %>
+                            <span class="pro-label text-center rounded">Pro</span>
+                          <%end %>
                         <% end %>
                       <% end %>
                     </div>
@@ -23,9 +27,7 @@
                       <% end %>
 
                       <p class="lead"><%=user.profile.job_title %>
-                        <%if user.plan_id == 2 %>
-                          <span class="badge badge-success">Pro</span>
-                        <%end %>
+
                       </p>
                       <hr class="my-2">
 
